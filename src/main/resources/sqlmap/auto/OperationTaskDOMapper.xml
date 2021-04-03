@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.github.wolfgang.operation.core.dal.mapper.OperationTaskDOMapper">
+    <resultMap id="BaseResultMap" type="com.github.wolfgang.operation.core.dal.dataobject.OperationTaskDO">
+        <!--@mbg.generated generated on Sat Feb 29 23:00:56 CST 2020.-->
+        <!--@Table operation_task-->
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="operation_id" jdbcType="INTEGER" property="operationId"/>
+        <result column="task_id" jdbcType="VARCHAR" property="taskId"/>
+        <result column="task_caller" jdbcType="VARCHAR" property="taskCaller"/>
+        <result column="task_name" jdbcType="VARCHAR" property="taskName"/>
+        <result column="is_done" jdbcType="BOOLEAN" property="isDone"/>
+        <result column="exception" jdbcType="BLOB" property="exception"/>
+        <result column="last_call_time" jdbcType="TIMESTAMP" property="lastCallTime"/>
+        <result column="period" jdbcType="LONGVARCHAR" property="period"/>
+        <result column="task_status" jdbcType="VARCHAR" property="taskStatus"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--@mbg.generated generated on Sat Feb 29 23:00:56 CST 2020.-->
+        id, operation_id, task_id, task_caller, task_name, is_done, `exception`, last_call_time,
+        period, task_status
+    </sql>
+</mapper>

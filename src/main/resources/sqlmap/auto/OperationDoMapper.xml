@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.github.wolfgang.operation.core.dal.mapper.OperationHistDOMapper">
+    <sql id="BaseColumnList">
+        <!-- WARNING - @mbg.generated -->
+        `id`,`is_invoke`,`invoke_time`,`oper_status`,`user_uuid`,`comment`,`is_done`,`biz_key`,`receiver`,`receiver_name`,`expire_time`,`expire_mills`,`caller`,`create_time`,`update_time`
+    </sql>
+    <select id="selectExpiredOperations" resultType="java.lang.Integer">
+        SELECT `op`.`id`
+        FROM `operation` op
+                     inner join operation_receiver opr on opr.operation_id = op.id
+        WHERE (op.`is_done` = false and opr.`expire_time` &lt;= NOW())
+    </select>
+</mapper>

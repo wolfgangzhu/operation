@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.github.wolfgang.operation.core.dal.mapper.OperationReceiverDOMapper">
+    <resultMap id="BaseResultMap" type="com.github.wolfgang.operation.core.dal.dataobject.OperationReceiverDO">
+        <!--@mbg.generated generated on Sat Feb 29 19:08:44 CST 2020.-->
+        <!--@Table operation_receiver-->
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="operation_id" jdbcType="INTEGER" property="operationId"/>
+        <result column="receiver_class" jdbcType="VARCHAR" property="receiverClass"/>
+        <result column="receiver_name" jdbcType="VARCHAR" property="receiverName"/>
+        <result column="expire_mills" jdbcType="BIGINT" property="expireMills"/>
+        <result column="expire_time" jdbcType="TIMESTAMP" property="expireTime"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--@mbg.generated generated on Sat Feb 29 19:08:44 CST 2020.-->
+        id, operation_id, receiver_class, receiver_name, expire_mills, expire_time
+    </sql>
+</mapper>
